@@ -8,7 +8,7 @@ Editor.md的官网是:https://pandao.github.io/editor.md/examples/index.html
 ![image](https://github.com/LaravelChen/laravel-editormd/raw/master/images/default.png)
 
 ### sublime样式
-![image](https://github.com/LaravelChen/laravel-editormd/raw/master/images/dark.png)
+![image](https://github.com/LaravelChen/laravel-editormd/raw/master/images/darkphoto.png)
 
 ## 安装
 ### 使用composer安装扩展
