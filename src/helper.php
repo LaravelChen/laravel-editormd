@@ -5,8 +5,8 @@ if (!function_exists("editor_css")) {
     {
         return '
            <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-           <link rel="stylesheet" href="vendor/editormd/css/editormd.min.css"/>
-           <link rel="stylesheet" href="vendor/editormd/css/editormd.preview.min.css">
+           <link rel="stylesheet" href="vendor/editormd/css/editormd.css"/>
+           <link rel="stylesheet" href="vendor/editormd/css/editormd.preview.css">
            <link rel="stylesheet" href="vendor/editormd/css/customer.css">
         ';
     }
