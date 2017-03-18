@@ -5,10 +5,10 @@
 Editor.md的官网是:https://pandao.github.io/editor.md/examples/index.html
 ## 效果图
 ### 默认样式
-![image](https://github.com/LaravelChen/myflash/raw/master/images/default.png)
+![image](https://github.com/LaravelChen/laravel-editormd/raw/master/images/default.png)
 
 ### sublime样式
-![image](https://github.com/LaravelChen/myflash/raw/master/images/dark.png)
+![image](https://github.com/LaravelChen/laravel-editormd/raw/master/images/dark.png)
 
 ## 安装
 ### 使用composer安装扩展
