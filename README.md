@@ -11,7 +11,7 @@ Editor.md的官网是:https://pandao.github.io/editor.md/examples/index.html
 ![image](https://github.com/LaravelChen/laravel-editormd/raw/master/images/darktwo.png)
 
 ## 安装
-### 使用composer安装扩展
+### 使用composer安装扩展(最好翻墙哈哈)
 ```
 composer require laravelchen/laravel-editormd
 ```
