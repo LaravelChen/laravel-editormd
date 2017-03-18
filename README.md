@@ -1,4 +1,4 @@
-## Editor.md For Laravel5
+# Editor.md For Laravel5
 
 ## 介绍
 > 介于在Laravel下使用Editor.md这款Markdown编辑器的原因,觉得这款编辑器非常好用，于是做成laravel的扩展，方便使用!
