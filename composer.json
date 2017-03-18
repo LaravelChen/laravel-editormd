@@ -1,0 +1,21 @@
+{
+    "name": "laravelchen/laravel-editormd",
+    "description": "laravel-editor-mb",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LaravelChen",
+            "email": "848407695@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4":{
+            "LaravelChen\\Editormd\\":"src/"
+        },
+        "files":[
+            "src/helper.php"
+        ]
+    }
+}
