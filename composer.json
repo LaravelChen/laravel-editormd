@@ -21,7 +21,4 @@
       "src/helper.php"
     ]
   }
-  "suggest": {
-    "suggest": "支持七牛存储哦"
-  },
 }
