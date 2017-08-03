@@ -31,6 +31,7 @@ php artisan vendor:publish
 ```
 <?php
 return [
+    'upload_path'=>'uploads/image/',//上传文件的地址
     'width'=>'100%',//宽度建议100%
     'height'=>'700',//高度
     'theme'=>'default',//顶部的主题分为default和dark
