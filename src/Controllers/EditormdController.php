@@ -28,7 +28,7 @@ class EditormdController extends Controller
             ];
             $validator = Validator::make($request->all(), $max, $message);
             if ($validator->passes()) {
-                $destpath = 'uploads/images/';
+                $destpath = config("editormd.upload_path");
                 $savepath = $destpath . date('Ymd', time());
                 if (!is_dir($savepath)) {
                     mkdir($savepath,0777,true);
