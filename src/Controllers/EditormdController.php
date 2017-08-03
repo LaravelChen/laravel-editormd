@@ -5,6 +5,7 @@ namespace LaravelChen\Editormd\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Validator;
+use zgldh\QiniuStorage\QiniuStorage;
 
 class EditormdController extends Controller
 {
@@ -31,16 +32,27 @@ class EditormdController extends Controller
                 $destpath = config("editormd.upload_path");
                 $savepath = $destpath . date('Ymd', time());
                 if (!is_dir($savepath)) {
-                    mkdir($savepath,0777,true);
+                    mkdir($savepath, 0777, true);
                 }
                 $ext = $file->getClientOriginalExtension();
                 if (in_array($ext, ['png', 'jpg', 'jpeg', 'gif'])) {
-                    $realpayh = '/' . $savepath . '/' . uniqid() . '_' . date('s') . '.' . $ext;
-                    if ($file->isValid()) {
-                        $file->move($savepath, $realpayh);
-                        $json = array_replace($json, ['success' => 1, 'url' => $realpayh]);
+                    if (config("editormd.upload_type") === 'qiniu') {
+                        $disk = QiniuStorage::disk('qiniu');
+                        $disk->put(basename($savepath), file_get_contents($file));
+                        if (config("editormd.upload_http") === 'https') {
+                            $realurl = $disk->downloadUrl(basename($savepath), 'https');
+                        } else {
+                            $realurl = $disk->downloadUrl(basename($savepath));
+                        }
+                        $json = array_replace($json, ['success' => 1, 'url' => $realurl]);
                     } else {
-                        $json = array_replace($json, ['success' => 0, 'meassge' => '文件校验失败']);
+                        $realpayh = '/' . $savepath . '/' . uniqid() . '_' . date('s') . '.' . $ext;
+                        if ($file->isValid()) {
+                            $file->move($savepath, $realpayh);
+                            $json = array_replace($json, ['success' => 1, 'url' => $realpayh]);
+                        } else {
+                            $json = array_replace($json, ['success' => 0, 'meassge' => '文件校验失败']);
+                        }
                     }
                 } else {
                     $json = array_replace($json, ['success' => 0, 'meassge' => '文件类型不符合要求']);

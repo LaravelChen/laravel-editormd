@@ -1,21 +1,24 @@
 {
-    "name": "laravelchen/laravel-editormd",
-    "description": "laravel-editor-mb",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "LaravelChen",
-            "email": "848407695@qq.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {},
-    "autoload":{
-        "psr-4":{
-            "LaravelChen\\Editormd\\":"src/"
-        },
-        "files":[
-            "src/helper.php"
-        ]
+  "name": "laravelchen/laravel-editormd",
+  "description": "laravel-editor-mb",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "LaravelChen",
+      "email": "848407695@qq.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.3",
+    "zgldh/qiniu-laravel-storage": "^0.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelChen\\Editormd\\": "src/"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  }
 }
