@@ -38,11 +38,12 @@ class EditormdController extends Controller
                 if (in_array($ext, ['png', 'jpg', 'jpeg', 'gif'])) {
                     if (config("editormd.upload_type") === 'qiniu') {
                         $disk = QiniuStorage::disk('qiniu');
-                        $disk->put(basename($savepath), file_get_contents($file));
+                        $realpath= $savepath . '/' . uniqid() . '_' . date('s') . '.' . $ext;
+                        $disk->put(basename($realpath), file_get_contents($file));
                         if (config("editormd.upload_http") === 'https') {
-                            $realurl = $disk->downloadUrl(basename($savepath), 'https');
+                            $realurl = $disk->downloadUrl(basename($realpath), 'https');
                         } else {
-                            $realurl = $disk->downloadUrl(basename($savepath));
+                            $realurl = $disk->downloadUrl(basename($realpath));
                         }
                         $json = array_replace($json, ['success' => 1, 'url' => $realurl]);
                     } else {

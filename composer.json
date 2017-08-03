@@ -21,4 +21,12 @@
       "src/helper.php"
     ]
   }
+  "extra": {
+    "laravel": {
+      "providers": [
+        " LaravelChen\\Editormd\\EditorMdProvider",
+        "zgldh\\QiniuStorage\\QiniuFilesystemServiceProvider"
+      ]
+    }
+  }
 }
