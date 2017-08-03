@@ -21,12 +21,7 @@
       "src/helper.php"
     ]
   }
-  "extra": {
-    "laravel": {
-      "providers": [
-        " LaravelChen\\Editormd\\EditorMdProvider",
-        "zgldh\\QiniuStorage\\QiniuFilesystemServiceProvider"
-      ]
-    }
-  }
+  "suggest": {
+    "suggest": "支持七牛存储哦"
+  },
 }
